@@ -69,6 +69,20 @@ class Stack:
                 iterator_node = iterator_node.next
             return
 
+    # Calculating the length of the stack
+    def len(self):
+        if self.is_empty():
+            print("Your stack is empty, please add elements.")
+        else:
+            # Iterating through stack to get number of elements.
+            iterator_node = self.head
+            counter = 0 
+            while(iterator_node != None):
+                counter = counter + 1
+                iterator_node = iterator_node.next
+
+            return counter
+
 
 if __name__ == "__main__" :        
     # Initialising our stack.
@@ -83,6 +97,7 @@ if __name__ == "__main__" :
     
     # Display stack elements 
     MyStack.print_stack()
+    print('Number of element\'s in the stack: ', MyStack.len())
     
     # Print top element of stack 
     print("\n Top element is ",MyStack.top())
@@ -93,6 +108,7 @@ if __name__ == "__main__" :
     
     # Display stack elements
     MyStack.print_stack()
+    print('Number of element\'s in the stack: ', MyStack.len())
 
     # Print top element of stack 
     print("\nTop element is ", MyStack.top()) 
@@ -102,6 +118,7 @@ if __name__ == "__main__" :
 
     # Display stack elements
     MyStack.print_stack()
+    print('Number of element\'s in the stack: ', MyStack.len())
 
     # Print top element of stack 
     print("\nTop element is ", MyStack.top()) 

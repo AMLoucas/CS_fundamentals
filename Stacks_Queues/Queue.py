@@ -70,13 +70,27 @@ class Queue:
         if self.is_empty():
             print("Your queue is empty, please add elements.")
         else:
-            # Iterating through stack to print the status.
+            # Iterating through queue to print the status.
             iterator_node = self.front
             print('Current Queue status is: \n')
             while(iterator_node != None):
                 print(iterator_node.data, "\n")
                 iterator_node = iterator_node.next
             return
+    
+    # Calculating the length of the queue
+    def len(self):
+        if self.is_empty():
+            print("Your queue is empty, please add elements.")
+        else:
+            # Iterating through queue to get number of elements.
+            iterator_node = self.front
+            counter = 0 
+            while(iterator_node != None):
+                counter = counter + 1
+                iterator_node = iterator_node.next
+
+            return counter
   
 # Driver Code
 if __name__== '__main__':
@@ -96,6 +110,7 @@ if __name__== '__main__':
     # Printing front and back
     Queue.peek_front()
     Queue.peek_back()
+    print('The queue\' length is: ', Queue.len())
 
     ###
     # Removing two elements.
@@ -107,3 +122,7 @@ if __name__== '__main__':
     # Printing front and back
     Queue.peek_front()
     Queue.peek_back()
+    print('The queue\' length is: ', Queue.len())
+
+    # Just placeholder to not close terminal.
+    input("Press any key to quit the data structure.")
